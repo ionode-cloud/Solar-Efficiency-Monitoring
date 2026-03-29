@@ -1,0 +1,56 @@
+Solar Pane Monitoring System - API Documentation
+
+Base URL: http://localhost:62889  (or your server's base URL)
+
+1. GET /data
+Description: Fetch the latest sensor data representing the system's state.
+
+Response (Example):
+{
+  "message": "Data fetched successfully.",
+  "data": {
+    "_id": "60d5ecb8b392cb3a54134102",
+    "totalEfficiency": 85.5,
+    "power": 350.5,
+    "energyTotal": 1500.5,
+    "voltage": 24.5,
+    "current": 14.3,
+    "lightIntensity": 950,
+    "panelTemp": 45.2,
+    "dustLevel": 12.5,
+    "inclinationAngle": 35,
+    "panelDirection": "South",
+    "sensorHealth": "OK",
+    "createdAt": "2023-10-25T10:00:00.000Z",
+    "updatedAt": "2023-10-25T10:05:00.000Z",
+    "__v": 0
+  }
+}
+
+--------------------------------------------------
+
+2. POST /data
+Description: Create or update the sensor data. Only one row/document is kept for the system's state, acting as a real-time snapshot.
+
+Request Body JSON:
+{
+  "totalEfficiency": 85.5,
+  "power": 350.5,
+  "energyTotal": 1500.5,
+  "voltage": 24.5,
+  "current": 14.3,
+  "lightIntensity": 950,
+  "panelTemp": 45.2,
+  "dustLevel": 12.5,
+  "inclinationAngle": 35,
+  "panelDirection": "South",
+  "sensorHealth": "OK"
+}
+
+Response (Example):
+{
+  "message": "Data created/updated successfully.",
+  "data": {
+     // Returns the updated JSON object above
+  }
+}
