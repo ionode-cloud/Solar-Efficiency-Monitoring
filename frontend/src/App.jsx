@@ -14,7 +14,7 @@ const App = () => {
   // Fetch API
   const fetchSolarData = async () => {
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://solar-monitoring.ionode.cloud/api';
+      const apiUrl = import.meta.env.VITE_API_URL;
       const res = await fetch(`${apiUrl}/data`);
       const json = await res.json();
       if (json?.data) {
@@ -75,7 +75,7 @@ const App = () => {
     <div className="dashboard-container">
       <header className="header">
         <div>
-          <h1 className="header-title">Ai-Power Smart Monitoring System</h1>
+          <h1 className="header-title">Solar Efficiency Monitoring System</h1>
           <p className="header-subtitle">
             System Status: <span className="operational-status">GENERATING POWER</span>
           </p>
